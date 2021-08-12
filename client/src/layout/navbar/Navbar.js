@@ -35,8 +35,7 @@ let Navbar = () => {
 
   let afterLogin = (
     <React.Fragment>
-      {Object.keys(user).length > 0 && (
-        <React.Fragment>
+    
           <li className="nav-item">
             <Link to="/posts/list" className="nav-link">
               <i className="fa fa-list" /> Posts
@@ -58,8 +57,6 @@ let Navbar = () => {
               />
             </Link>
           </li>
-        </React.Fragment>
-      )}
       <li className="nav-item">
         <Link to="/" className="nav-link" onClick={clickLogOut}>
           LogOut
