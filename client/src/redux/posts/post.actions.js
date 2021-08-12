@@ -69,7 +69,7 @@ export const createPost = (post) => {
                 let response = await Axios.post(dataUrl, post);
              
                 dispatch({type : CREATE_POST_SUCCESS, payload : response.data});
-                //await window.location.reload()
+                window.location.reload()
                 
             }
         }
