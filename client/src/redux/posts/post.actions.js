@@ -70,7 +70,6 @@ export const createPost = (post) => {
              
                 dispatch({type : CREATE_POST_SUCCESS, payload : response.data});
                 window.location.reload()
-                
             }
         }
         catch (error) {
