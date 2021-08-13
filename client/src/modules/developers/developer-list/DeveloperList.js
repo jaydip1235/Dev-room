@@ -60,7 +60,7 @@ let DeveloperList = () => {
                                                                                 <small>{profile.location}</small><br/>
                                                                                 <Link to={`/developers/${profile._id}`} className="btn btn-teal btn-sm">View Profile</Link>
                                                                             </div>
-                                                                            <div className="col-md-5">
+                                                                            <div className="col-md-5 d-flex justify-content-center flex-wrap ">
                                                                                 {
                                                                                     profile.skills.length > 0 &&
                                                                                         profile.skills.map((skill , index) => {

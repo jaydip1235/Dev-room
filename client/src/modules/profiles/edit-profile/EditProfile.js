@@ -175,7 +175,7 @@ const uploadImage=async(e)=>{
                                                     name="skills"
                                                     value={localProfile.skills}
                                                     onChange={updateInput}
-                                                    type="text" className="form-control" placeholder="Skills"/>
+                                                    type="text" className="form-control" placeholder="Write in comma separated format like C,C++,.."/>
                                             </div>
                                             <div className="form-group">
                                                 <textarea
