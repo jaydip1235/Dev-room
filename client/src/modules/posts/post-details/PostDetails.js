@@ -82,6 +82,7 @@ function timeDifference(current, previous) {
 
     return (
         <React.Fragment>
+            {/* <pre>{JSON.stringify(selectedPost.comments)}</pre> */}
             {
                 loading ? <Spinner/> :
                     <React.Fragment>
@@ -100,7 +101,7 @@ function timeDifference(current, previous) {
                                                 <div className="card-body bg-light-grey">
                                                     <div className="row">
                                                         <div className="col-md-2 text-center">
-                                                            <img src={selectedPost.avatar} alt="" className="rounded-circle" width="60" height="60"/><br/>
+                                                            <img src={selectedPost.user.avatar} alt="" className="rounded-circle" width="60" height="60"/><br/>
                                                             <small>{selectedPost.name}</small>
                                                         </div>
                                                         <div className="col-md-8">
@@ -165,6 +166,7 @@ function timeDifference(current, previous) {
                                                                     </div>
                                                                     <div className="col-md-8">
                                                                         <p style={{fontWeight : "bold"}}>{comment.text}</p>
+                                                                        <small>{timeDifference(new Date(), new Date(comment.date))}</small><br/>
                                                                         {
                                                                             comment.user === user._id ?
                                                                                 <button className="btn btn-danger btn-sm" onClick={clickDeleteComment.bind(this,comment._id)}>

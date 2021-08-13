@@ -76,7 +76,7 @@ router.get('/', authenticate, async (request , response) => {
 router.get('/:postId' , authenticate , async (request , response) => {
     try {
         let postId = request.params.postId;
-        let post = await Post.findById(postId);
+        let post = await Post.findById(postId).populate('user',["_id","avatar"]);
         if(!post){
             return response.status(400).json({errors : [{msg : 'No Post Found'}]});
         }
@@ -225,7 +225,7 @@ router.post('/comment/:postId' , [
         let user = await User.findOne({_id : request.user.id});
 
         // check if post is exists
-        let post = await Post.findById(postId);
+        let post = await Post.findById(postId)
         if(!post){
             return response.status(400).json({errors : [{msg : 'No Post Found'}]});
         }
@@ -236,9 +236,12 @@ router.post('/comment/:postId' , [
             name : user.name,
             avatar : user.avatar
         };
+
         post.comments.unshift(newComment);
         post = await post.save();
-        response.status(200).json({post : post});
+        let postt = await Post.findById(postId).populate("user",["_id","avatar"])
+
+        response.status(200).json({post : postt});
     }
     catch (error) {
         console.error(error);
@@ -258,7 +261,7 @@ router.delete('/comment/:postId/:commentId', authenticate , async (request , res
         let postId = request.params.postId;
         let commentId = request.params.commentId;
 
-        let post = await Post.findById(postId);
+        let post = await Post.findById(postId).populate("user",["_id","avatar"]);
 
         // pull the comments of a post
         let comment = post.comments.find(comment => comment.id === commentId);
