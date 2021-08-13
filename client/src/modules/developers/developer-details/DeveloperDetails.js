@@ -100,7 +100,7 @@ let DeveloperDetails = () => {
                           </ExternalLink>
                         </div>
                         <div className="p-2">
-                        <ExternalLink href={selectedProfile.social.instagram} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink href={selectedProfile.social.youtube} target="_blank" rel="noopener noreferrer">
                           <i className="fab fa-youtube" />
                           </ExternalLink>
                         </div>

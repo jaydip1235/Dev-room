@@ -183,7 +183,7 @@ const uploadImage=async(e)=>{
                                                     name="bio"
                                                     value={localProfile.bio}
                                                     onChange={updateInput}
-                                                    rows="3" className="form-control" placeholder="Job Description"/>
+                                                    rows="3" className="form-control" placeholder="Biography"/>
                                             </div>
                                             <div className="form-group">
                                                 <input

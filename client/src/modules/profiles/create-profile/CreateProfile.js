@@ -153,7 +153,7 @@ let CreateProfile = () => {
                                                     name="bio"
                                                     value={profile.bio}
                                                     onChange={updateInput}
-                                                    rows="3" className="form-control" placeholder="Job Description"/>
+                                                    rows="3" className="form-control" placeholder="Biography"/>
                                 </div>
                                 <div className="form-group">
                                     <input
