@@ -265,6 +265,7 @@ router.delete('/comment/:postId/:commentId', authenticate , async (request , res
 
         // pull the comments of a post
         let comment = post.comments.find(comment => comment.id === commentId);
+        let tt = comment.text
 
         // make sure the comment exists
         if(!comment){
@@ -276,8 +277,10 @@ router.delete('/comment/:postId/:commentId', authenticate , async (request , res
             return response.status(401).json({msg : 'User is not authorized'});
         }
 
-        // get remove index
-        let removeIndex = post.comments.map(comment => comment.user.toString()).indexOf(request.user.id);
+       
+        
+        let removeIndex = post.comments.findIndex(p => p._id == commentId);
+        console.log(removeIndex)
         if(removeIndex !== -1){
             post.comments.splice(removeIndex, 1);
             await post.save();
