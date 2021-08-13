@@ -6,7 +6,7 @@ import * as userAction from '../../../redux/users/user.actions';
 import * as postActions from '../../../redux/posts/post.actions';
 import * as postReducer from '../../../redux/posts/post.reducer';
 import Spinner from "../../../layout/misc/spinner/Spinner";
-import { text } from 'body-parser';
+
 
 let PostList = () => {
     let [localPost , setLocalPost] = useState({
