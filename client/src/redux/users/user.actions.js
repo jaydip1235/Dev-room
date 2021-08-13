@@ -32,10 +32,8 @@ export const registerUser = (user, history) => {
         catch (error) {
             console.error(error);
             dispatch({type : REGISTER_USER_FAILURE , payload: {error : error}});
-            let errorList = error.errors;
-            for(let error of errorList){
-                dispatch(alertActions.setAlert(error.msg , 'danger'))
-            }
+            
+                dispatch(alertActions.setAlert("User already exists or something went wrong" , 'danger'))
         }
     }
 };
