@@ -264,7 +264,7 @@ router.delete('/comment/:postId/:commentId', authenticate , async (request , res
         let post = await Post.findById(postId).populate("user",["_id","avatar"]);
 
         // pull the comments of a post
-        let comment = post.comments.find(comment => comment._id === commentId);
+        let comment = post.comments.find(comment => comment.id === commentId);
 
         // make sure the comment exists
         if(!comment){
