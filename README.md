@@ -1,6 +1,6 @@
 # Dev-Room
 
-## Website link [here](https://dev-room.herokuapp.com/)
+## Website link [here](https://dev-room.netlify.app/)
 
 ## Developer : [Jaydip Dey](https://github.com/jaydip1235)
 
